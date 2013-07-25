@@ -1,0 +1,33 @@
+<h1>Student-Tutor Matchmaker</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Tutor</th>
+      <th>Subject</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tutorships.each do |tutorship| %>
+      <tr>
+        <td><%= tutorship.student %></td>
+        <td><%= tutorship.tutor %></td>
+        <td><%= tutorship.subject %></td>
+        <td><%= link_to 'Show', tutorship %></td>
+        <td><%= link_to 'Edit', edit_tutorship_path(tutorship) %></td>
+        <td><%= link_to 'Destroy', tutorship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3><%= link_to 'New Tutorship', new_tutorship_path %><br>
+    <%= link_to "Add a new student", :students %> |
+    <%= link_to "Add a new tutor", :tutors %></h3>

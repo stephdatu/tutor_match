@@ -1,0 +1,29 @@
+<%= form_for(@tutorship) do |f| %>
+  <% if @tutorship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorship.errors.count, "error") %> prohibited this tutorship from being saved:</h2>
+
+      <ul>
+      <% @tutorship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student %><br>
+    <%= f.collection_select(:student_id, Student.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :tutor %><br>
+    <%= f.collection_select(:tutor_id, Tutor.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
