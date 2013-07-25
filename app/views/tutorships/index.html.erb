@@ -15,8 +15,8 @@
   <tbody>
     <% @tutorships.each do |tutorship| %>
       <tr>
-        <td><%= tutorship.student %></td>
-        <td><%= tutorship.tutor %></td>
+        <td><%= tutorship.student.name %></td>
+        <td><%= tutorship.tutor.name %></td>
         <td><%= tutorship.subject %></td>
         <td><%= link_to 'Show', tutorship %></td>
         <td><%= link_to 'Edit', edit_tutorship_path(tutorship) %></td>

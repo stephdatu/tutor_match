@@ -4,9 +4,9 @@ class TutorshipsController < ApplicationController
   # GET /tutorships
   # GET /tutorships.json
   def index
-    @tutorships = Tutorship.all
     @students = Student.all
     @tutors = Tutor.all
+    @tutorships = Tutorship.all
   end
 
   # GET /tutorships/1
@@ -26,7 +26,7 @@ class TutorshipsController < ApplicationController
   # POST /tutorships
   # POST /tutorships.json
   def create
-    @tutorship = Tutorship.new(tutorship_params)
+    @tutorship = Tutorship.create(tutorship_params)
 
     respond_to do |format|
       if @tutorship.save
@@ -71,6 +71,7 @@ class TutorshipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorship_params
-      params.require(:tutorship).permit(:student, :tutor, :subject)
+      params.require(:tutorship).permit(:student_id, :tutor_id, :subject)
+      #binding.pry
     end
 end
