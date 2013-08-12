@@ -21,4 +21,7 @@ You can also opt to add in your own students and tutors.
 * From the home page, you will have the option to view, edit, or destroy your new relationship.
 
 
-Author: Stephanie Datu (stephdatu@gmail.com)
+Author: Stephanie Datu (stephdatu@gmail.com)  
+
+## License
+http://stephdatu.mit-license.org/
